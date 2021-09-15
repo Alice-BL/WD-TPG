@@ -1,0 +1,11 @@
+.header {
+    display: flex;
+    justify-content: center;
+    background-color:rgb(91, 78, 211);
+    width: 100%;
+    align-items: center;
+} 
+#search-Btn {
+    border-radius: 5px;
+    color: white;
+}
