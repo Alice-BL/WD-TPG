@@ -20,31 +20,79 @@
         <h1>Weather Dashboard</h1>
     </header>
     <main>
-        <div class="search-column">
-            <h2>Search for a City:</h2><br>
-                <input type="text" class= "col-2" placeholder= "City Name" id="City-input"></inpput><br><br>
-            <button class="col-2 bg-primary" id="search-Btn">Search</button><br><br>
-            <div class="search-history">
-                <!--<button class=" col-2 bg-secondary" id="searchHis-Btn"></button>-->
-            </div>
+        <div class="row p-4">
+            <section class="search p-4">
+            <!----stuff in search section---->
+                <h2>Search for a City</h2><br>
+                <input type="text" placeholder= "City Name" id="City-input"></inpput><br><br>
+                <button class="bg-primary" id="search-Btn">Search</button><br><br>
+                <div class="search-history">
+            
 
+            </section>
+            <div class="col">
+                <section class="current-forecast">
+                <!----stufff in current forecast---->
+                    <div class="cityName"><span>Dallas</span>
+                        <div id="current-date"></div>
+                        <img id="weather-icon">                        
+                    </div>
+                    <p class="current-city">Temp: <span id="temp-info">deg F</span></hp></p>
+                    <p class="current-city">Wind: <span id="wind-info">MPH</span></p>
+                    <p class="current-city">Humidity: <span id="humidity-info">%</span></p>
+                    <p class="current-city">UV Index: <span id="uv-index"></span></p>
 
-        </div>
-        <div class="row">
-            <div class="col-10 current-Forecast">
-                <div class="city-weather-info">
-                <div id="current-date-info"></div>
-                <div id="-current-temp-info"></div>
-                <div id="current-wind-info"></div>
-                <div id="current-humidity-info"></div>
-                <div id="current-UV"></div>
+                
+
+                </section>
+                <div class="row 5-Day">
+                                    
+                    <h2>5-Day Forecast:</h2><br><br>
+                    <div class="day 1" id="box1"></div>
+                        <img class="weather-img">
+                        <p class="5day">Temp: <span class="5Day-temp">deg F</span></p>
+                        <p class="5day">Wind: <span class="5Day-wind">MPH</span></p>
+                        <p class="5day">Humidity: <span class="5Day-humid">%</span></p>
+
+                        
+                    </div>
+                    <div class="day 2" id="box2"></div>
+                        <img class="weather-img">
+                        <p class="5day">Temp: <span class="5Day-temp">deg F</span></p>
+                        <p class="5day">Wind: <span class="5Day-wind">MPH</span></p>
+                        <p class="5day">Humidity: <span class="5Day-humid">%</span></p>
+
+                        
+                    </div>
+                    <div class="day 3" id="box3"></div>
+                        <img class="weather-img">
+                        <p class="5day">Temp: <span class="5Day-temp">deg F</span></p>
+                        <p class="5day">Wind: <span class="5Day-wind">MPH</span></p>
+                        <p class="5day">Humidity: <span class="5Day-humid">%</span></p>
+
+                        
+                    </div>
+                    <div class="day 4" id="box4"></div>
+                        <img class="weather-img">
+                        <p class="5day">Temp: <span class="5Day-temp">deg F</span></p>
+                        <p class="5day">Wind: <span class="5Day-wind">MPH</span></p>
+                        <p class="5day">Humidity: <span class="5Day-humid">%</span></p>
+
+                        
+                    </div>
+                    <div class="day 5" id="box5"></div>
+                        <img class="weather-img">
+                        <p class="5day">Temp: <span class="5Day-temp">deg F</span></p>
+                        <p class="5day">Wind: <span class="5Day-wind">MPH</span></p>
+                        <p class="5day">Humidity: <span class="5Day-humid">%</span></p>
+
+                        
+                    </div>
+                
+                </div>
+            </div>           
                             
-            </div>
-
-            <div class="col-2 5-Day Forecast">
-
-            </div>
-
+        
         </div>
     
     </main>
