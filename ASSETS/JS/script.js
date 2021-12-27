@@ -1,5 +1,9 @@
 // created an API key
 var weatherAPIKey = "4a9646ee83d600552d65c84deed82d99";
+var cityInput = document.querySelector('#city-input');
+var searchButton = document.querySelector('#search-Btn');
+var currentForecast = document.querySelector('.current-forecast');
+var fiveDay = document.querySelector('.FiveDay');
 
 
 // write a function to getWeather(). I will pass in a city as an argument to getWeather(city).
