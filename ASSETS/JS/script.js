@@ -32,21 +32,37 @@ function getWeather(city) {
             console.log(oneCallData);
 
 
-            // Copied link from stackoverflow to get the weather icon
-            var iconurl = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+                // Copied link from stackoverflow to get the weather icon
+                var iconurl = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
             
-            // Dynamic html and data
-            currentForecast.innerHTML = `
+                // Dynamic html and data
+                currentForecast.innerHTML = `
                     <div class="cityName"><h3 id="city">${data.name} </h3>
                         <div id="current-date">(${moment(data.dt, 'X').format('MM/DD/YYYY')})</div>
                         <img id="weather-icon" src='${iconurl}'>                        
                     </div>
                     <p class="current-city">Temp: <span id="temp-info">${data.main.temp} F</span></hp></p>
                     <p class="current-city">Wind: <span id="wind-info">${data.wind.speed}MPH</span></p>
-                    <p class="current-city">Humidity: <span id="humidity-info">${data.main.humidity}%</span></p>
+                    <p class="current-city">Humidity: <span id="humidity-info">${data.main.humidity} %</span></p>
                     <p class="current-city">UV Index: <span id="uv-index">${oneCallData.current.uvi}</span></p>
 
                     `
+                // Future conditions for the selected city, 5-day forecast
+                fiveDay.innerHTML = ''
+                for (let i = 1; i < 6; i++) {
+                var iconurl = "http://openweathermap.org/img/w/" + oneCallData.daily[i].weather[0].icon + ".png";
+
+                fiveDay.innerHTML = fiveDay.innerHTML + `<div class="day" id="box1">
+                <p>${moment(oneCallData.daily[i].dt, 'X').format('MM/DD/YYYY')}</p>
+                <img class="weather-img" src='${iconurl}'>
+                <p class="5day">Temp: <span class="5Day-temp">${oneCallData.daily[i].temp.day} F</span></p>
+                <p class="5day">Wind: <span class="5Day-wind">${oneCallData.daily[i].wind_deg} MPH</span></p>
+                <p class="5day">Humidity: <span class="5Day-humid">${oneCallData.daily[i].humidity} %</span></p>
+
+            
+                </div>`
+                }
+        
         });
     });   
 }
