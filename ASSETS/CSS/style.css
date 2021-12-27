@@ -1,11 +1,17 @@
+body {
+    background-color: rgb(153, 167, 153)
+}
 .header {
     display: flex;
     justify-content: center;
-    background-color:rgb(32, 21, 128);
+    background-color:rgb(26, 55, 77);
     width: 100%;
     align-items: center;
     color: white;
 } 
+h2 {
+    color: white;
+}
 #search-Btn {
     border-radius: 5px;
     color: white;
@@ -35,17 +41,18 @@ input {
     color: black;
     border-radius: 5px;
     border-style:solid;
-    border-color: black;
+    border-color:rgb(26, 55, 77);
     font-weight: bold;
 }
 
 .day {
     display: flexbox;
-    background-color:lightblue;
-    color: black;
+    background-color:rgb(20, 47, 67);
+    color: white;
     font-size: 20;
-    font-weight: bold;
-    border-radius: 2px;
+    font-weight:bold;
+    border-radius: 5px;
+    
     padding: 10px;
     margin-left: 10px;
 }
