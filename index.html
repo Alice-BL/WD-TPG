@@ -9,7 +9,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Montserrat:wght@300&family=Roboto+Condensed:wght@300&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+
+
   <link rel="stylesheet" href="./ASSETS/CSS/style.css">
   <title>Weather App</title>
 </head>
@@ -19,11 +22,12 @@
     <header class="header">
         <h1>Weather Dashboard</h1>
     </header>
+
     <main>
         <div class="row p-4">
             <section class="search">
             <!---search section--->
-                <h2>Search for a City:</h2><br>
+                <h3>Search for a City:</h3><br>
                 <input type="text" placeholder= "City Name" id="City-input"></inpput><br><br>
                 <button class="bg-primary" id="search-Btn">Search</button><br><br>
                 <div id="search-history"></div>
@@ -37,8 +41,8 @@
                     
                 
                 <!---future conditions 5-day forecast-->
-                </section>
-                    <h2>5-Day Forecast:</h2><br><br>
+                </section class='five-day'>
+                    <h2>5-Day Forecast:</h2><br>
                     
                     <div class="row FiveDay">
                                     

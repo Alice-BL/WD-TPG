@@ -1,5 +1,6 @@
 body {
-    background-color: rgb(153, 167, 153)
+    background-color:rgb(214, 229, 250);
+    font-family: 'Montserrat', sans-serif;
 }
 .header {
     display: flex;
@@ -10,20 +11,37 @@ body {
     color: white;
 } 
 h2 {
-    color: white;
+    color:bl;
+    font-weight: bold;
+    margin-left: 20px;
+}
+h3 {
+    color: black;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.search {
+    background-color: rgb(214, 229, 250);
+    padding-left: 15px;
 }
 #search-Btn {
-    border-radius: 5px;
+    border-radius: 10px;
     color: white;
     width: 100%;
 }
 input {
     width: 100%;
 }
-
+#City-input {
+    border-radius: 10px;
+    
+}
+.five-day {
+    margin-left: 10px;
+}
 .FiveDay {
     justify-content: space-around;
-    
 
 }
 .col {
@@ -33,25 +51,27 @@ input {
     
 }
 .current-forecast {
-    padding-left: 5px;
-    margin-left: 5px;
-    margin-bottom: 10px;
+    
+    margin-left: 20px;
+    margin-bottom: 20px;
     display: block;
     background-color: white;
     color: black;
-    border-radius: 5px;
+    border-radius: 10px;
     border-style:solid;
     border-color:rgb(26, 55, 77);
     font-weight: bold;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .day {
     display: flexbox;
-    background-color:rgb(20, 47, 67);
+    background-color:rgb(28, 109, 208);
     color: white;
     font-size: 20;
     font-weight:bold;
-    border-radius: 5px;
+    border-radius: 10px;
     
     padding: 10px;
     margin-left: 10px;

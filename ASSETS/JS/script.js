@@ -42,6 +42,7 @@ function getWeather(city) {
                         <img id="weather-icon" src='${iconurl}'>    
                         </div>                    
                     </div>
+                    
                     <p class="current-city">Temp: <span id="temp-info">${data.main.temp} ${"&#176F"}</span></hp></p>
                     <p class="current-city">Wind Speed: <span id="wind-info">${data.wind.speed} MPH</span></p>
                     <p class="current-city">Humidity: <span id="humidity-info">${data.main.humidity} %</span></p>
@@ -56,6 +57,7 @@ function getWeather(city) {
                 fiveDay.innerHTML = fiveDay.innerHTML + `<div class="day" id="box1">
                 <p>${moment(oneCallData.daily[i].dt, 'X').format('MM/DD/YYYY')}</p>
                 <img class="weather-img" src='${iconurl}'>
+                </br>
                 <p class="5day">Temp: <span class="5Day-temp">${oneCallData.daily[i].temp.day} ${"&#176F"} </span></p>
                 <p class="5day">Wind Speed: <span class="5Day-wind">${oneCallData.daily[i].wind_speed} MPH</span></p>
                 <p class="5day">Humidity: <span class="5Day-humid">${oneCallData.daily[i].humidity} %</span></p>
@@ -78,8 +80,26 @@ function getWeather(city) {
     });   
 }
 
-searchButton.addEventListener('click', function () {
+
+
+searchButton.addEventListener('click', function (e) {
     getWeather(cityInput.value);
+    e.preventDefault();
+    // var city = $('#City-input').val().trim();
+    // var searchHistoryList = [];
+
+    // if (!searchHistoryList.includes(city)) {
+    //     searchHistoryList.push(city);
+    //     var searchedCity = $(`
+    //         <li id="search-history">${city}</li>
+    //         `);
+    //     $("#City-input").append(searchedCity);
+    // };
+    
+    // localStorage.setItem("city", JSON.stringify(searchHistoryList));
+    // console.log(searchHistoryList);
+
+
     
 })
 
