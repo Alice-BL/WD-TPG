@@ -38,11 +38,12 @@ function getWeather(city) {
                 // Dynamic html and data
                 currentForecast.innerHTML = `
                     <div class="cityName"><h3 id="city">${data.name} </h3>
-                        <div id="current-date">(${moment(data.dt, 'X').format('MM/DD/YYYY')})</div>
-                        <img id="weather-icon" src='${iconurl}'>                        
+                        <div id="current-date">(${moment(data.dt, 'X').format('MM/DD/YYYY')})
+                        <img id="weather-icon" src='${iconurl}'>    
+                        </div>                    
                     </div>
                     <p class="current-city">Temp: <span id="temp-info">${data.main.temp} ${"&#176F"}</span></hp></p>
-                    <p class="current-city">Wind: <span id="wind-info">${data.wind.speed} MPH</span></p>
+                    <p class="current-city">Wind Speed: <span id="wind-info">${data.wind.speed} MPH</span></p>
                     <p class="current-city">Humidity: <span id="humidity-info">${data.main.humidity} %</span></p>
                     <p class="current-city">UV Index: <span id="uv-index">${oneCallData.current.uvi}</span></p>
 
@@ -56,19 +57,30 @@ function getWeather(city) {
                 <p>${moment(oneCallData.daily[i].dt, 'X').format('MM/DD/YYYY')}</p>
                 <img class="weather-img" src='${iconurl}'>
                 <p class="5day">Temp: <span class="5Day-temp">${oneCallData.daily[i].temp.day} ${"&#176F"} </span></p>
-                <p class="5day">Wind: <span class="5Day-wind">${oneCallData.daily[i].wind_speed} MPH</span></p>
+                <p class="5day">Wind Speed: <span class="5Day-wind">${oneCallData.daily[i].wind_speed} MPH</span></p>
                 <p class="5day">Humidity: <span class="5Day-humid">${oneCallData.daily[i].humidity} %</span></p>
 
             
                 </div>`
                 }
-        
+                
+                // Set UV Index data function and its color coded
+                let uvIndexColor = document.querySelector('#uv-index');
+                if (oneCallData.current.uvi <= 2) {
+                    uvIndexColor.setAttribute('class', 'badge badge-success');
+                } else if (oneCallData.current.uvi > 2 && oneCallData.current.uvi < 8) {
+                    uvIndexColor.setAttribute('class', 'badge badge-warning');
+                
+                } else {
+                    uvIndexColor.setAttribute('class', 'badge badge-danger')
+                }
         });
     });   
 }
 
 searchButton.addEventListener('click', function () {
     getWeather(cityInput.value);
+    
 })
 
 // Write a currentWeather(data) function that returns html values based on the data that is returned in your getWeather() fetch request.
