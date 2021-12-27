@@ -47,7 +47,7 @@ function getWeather(city) {
                     <p class="current-city">UV Index: <span id="uv-index">${oneCallData.current.uvi}</span></p>
 
                     `
-                // Future conditions for the selected city, 5-day forecast
+                // Future conditions for the selected city, 5-day forecast; created a for loop to loop through 5 days forecast, select from index 1 -5 under daily section from one call api
                 fiveDay.innerHTML = ''
                 for (let i = 1; i < 6; i++) {
                 var iconurl = "http://openweathermap.org/img/w/" + oneCallData.daily[i].weather[0].icon + ".png";
