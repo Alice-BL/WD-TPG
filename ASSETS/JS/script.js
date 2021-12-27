@@ -13,17 +13,31 @@ function getWeather(city) {
         method: 'GET',
         credentials: 'same-origin',
         redirect: 'follow'
-})
-
-    .then(function(response){
-        return response.json();
     })
-    .then(function(data){
-        console.log(data);
-    });
+
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+
+            // Copied link from stackoverflow to get the weather icon
+            var iconurl = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+            
+            // Dynamic html and data
+            currentForecast.innerHTML = `
+                    <div class="cityName"><h3 id="city">${data.name} </h3>
+                        <div id="current-date">(${moment(data.dt, 'X').format('MM/DD/YYYY')})</div>
+                        <img id="weather-icon" src='${iconurl}'>                        
+                    </div>
+                    <p class="current-city">Temp: <span id="temp-info">${data.main.temp} F</span></hp></p>
+                    <p class="current-city">Wind: <span id="wind-info">${data.wind.speed}MPH</span></p>
+                    <p class="current-city">Humidity: <span id="humidity-info">${data.main.humidity}%</span></p>
+                    `
+        });
 }
 
-searchButton.addEventListener('click', function() {
+searchButton.addEventListener('click', function () {
     getWeather(cityInput.value);
 })
 

@@ -41,7 +41,7 @@ input {
 
 .day {
     display: flexbox;
-    background-color:hotpink;
+    background-color:lightblue;
     color: black;
     font-size: 20;
     font-weight: bold;
