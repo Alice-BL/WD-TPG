@@ -21,6 +21,17 @@ function getWeather(city) {
         .then(function (data) {
             console.log(data);
 
+            // Get the link from One Call API
+            var oneCall = `https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&exclude={part}&appid=${weatherAPIKey}&units=imperial`
+
+            fetch(oneCall)
+            .then(function(response) {
+            return response.json();
+            })
+            .then(function(oneCallData) {
+            console.log(oneCallData);
+
+
             // Copied link from stackoverflow to get the weather icon
             var iconurl = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
             
@@ -33,8 +44,11 @@ function getWeather(city) {
                     <p class="current-city">Temp: <span id="temp-info">${data.main.temp} F</span></hp></p>
                     <p class="current-city">Wind: <span id="wind-info">${data.wind.speed}MPH</span></p>
                     <p class="current-city">Humidity: <span id="humidity-info">${data.main.humidity}%</span></p>
+                    <p class="current-city">UV Index: <span id="uv-index">${oneCallData.current.uvi}</span></p>
+
                     `
         });
+    });   
 }
 
 searchButton.addEventListener('click', function () {
