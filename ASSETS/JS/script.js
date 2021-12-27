@@ -42,7 +42,7 @@ function getWeather(city) {
                         <img id="weather-icon" src='${iconurl}'>                        
                     </div>
                     <p class="current-city">Temp: <span id="temp-info">${data.main.temp} ${"&#176F"}</span></hp></p>
-                    <p class="current-city">Wind: <span id="wind-info">${data.wind.speed}MPH</span></p>
+                    <p class="current-city">Wind: <span id="wind-info">${data.wind.speed} MPH</span></p>
                     <p class="current-city">Humidity: <span id="humidity-info">${data.main.humidity} %</span></p>
                     <p class="current-city">UV Index: <span id="uv-index">${oneCallData.current.uvi}</span></p>
 
@@ -55,8 +55,8 @@ function getWeather(city) {
                 fiveDay.innerHTML = fiveDay.innerHTML + `<div class="day" id="box1">
                 <p>${moment(oneCallData.daily[i].dt, 'X').format('MM/DD/YYYY')}</p>
                 <img class="weather-img" src='${iconurl}'>
-                <p class="5day">Temp: <span class="5Day-temp">${oneCallData.daily[i].temp.day} F</span></p>
-                <p class="5day">Wind: <span class="5Day-wind">${oneCallData.daily[i].wind_deg} MPH</span></p>
+                <p class="5day">Temp: <span class="5Day-temp">${oneCallData.daily[i].temp.day} ${"&#176F"} </span></p>
+                <p class="5day">Wind: <span class="5Day-wind">${oneCallData.daily[i].wind_speed} MPH</span></p>
                 <p class="5day">Humidity: <span class="5Day-humid">${oneCallData.daily[i].humidity} %</span></p>
 
             
