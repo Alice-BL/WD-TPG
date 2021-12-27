@@ -41,7 +41,7 @@ function getWeather(city) {
                         <div id="current-date">(${moment(data.dt, 'X').format('MM/DD/YYYY')})</div>
                         <img id="weather-icon" src='${iconurl}'>                        
                     </div>
-                    <p class="current-city">Temp: <span id="temp-info">${data.main.temp} F</span></hp></p>
+                    <p class="current-city">Temp: <span id="temp-info">${data.main.temp} ${"&#176F"}</span></hp></p>
                     <p class="current-city">Wind: <span id="wind-info">${data.wind.speed}MPH</span></p>
                     <p class="current-city">Humidity: <span id="humidity-info">${data.main.humidity} %</span></p>
                     <p class="current-city">UV Index: <span id="uv-index">${oneCallData.current.uvi}</span></p>
