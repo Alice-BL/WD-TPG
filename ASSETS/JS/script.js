@@ -5,7 +5,7 @@ var searchButton = document.querySelector('#search-Btn');
 var currentForecast = document.querySelector('.current-forecast');
 var fiveDay = document.querySelector('.FiveDay');
 var searchHistoryList = [];
-
+var clearButton = document.querySelector('#clear-history');
 // write a function to getWeather(). I will pass in a city as an argument to getWeather(city).
 function getWeather(city) {
     //Inside getWeather make a fetch request that returns the data from the openweathermap API.
@@ -78,8 +78,6 @@ function getWeather(city) {
                     }
                 });
 
-
-
         });
 }
 
@@ -110,8 +108,9 @@ searchButton.addEventListener('click', function (e) {
     //console.log(searchHistoryList);
 
 })
-// WHEN I open the weather dashboard
-// THEN I am presented with the last searched city forecast
+// WHEN I click on a city in the search history
+// THEN I am again presented with current and future conditions for that city
+
 $(document).on('click', '.search-list-group-item', function () {
     var listCity = $(this).text();
     getWeather(listCity);
@@ -120,7 +119,7 @@ $(document).on('click', '.search-list-group-item', function () {
 // Make the function is available after the document is loaded
 // When I open the weather dashboard
 // THEN I am presented with the last searched city forecast
-$(document).ready(function() {
+$(document).ready(function () {
     var searchCityHistoryArr = JSON.parse(localStorage.getItem('city'));
     if (searchCityHistoryArr !== null) {
         var lastSearchIndex = searchCityHistoryArr.length - 1;
@@ -129,6 +128,9 @@ $(document).ready(function() {
     }
 })
 
+// Clear old searched cities from localStorage
+clearButton.addEventListener('click', function (e) {
+    localStorage.clear();
 
-// Write a currentWeather(data) function that returns html values based on the data that is returned in your getWeather() fetch request.
 
+})
