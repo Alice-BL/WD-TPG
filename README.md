@@ -21,8 +21,11 @@ HW6 (w.dashboard)
   * The Deployed link: https://thutuephan.github.io/WD-TPG/
 
   ## Screenshots
+  ## #1
   ![w-dash1](https://github.com/thutuephan/WD-TPG/blob/main/ASSETS/images/weather-dash1.png)
+  ## #2
   ![w-dash2](https://github.com/thutuephan/WD-TPG/blob/main/ASSETS/images/weather-dash2.png)
+  ## #3
   ![w-dash3](https://github.com/thutuephan/WD-TPG/blob/main/ASSETS/images/weather-dash3.png)
 
   

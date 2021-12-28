@@ -24,8 +24,9 @@ h2 {
 h3 {
     color: black;
     font-weight: bolder;
-    margin-top: 15px;
+    margin-top: 10px;
     justify-content: space-around;
+    display: inline-flex;
 }
 .search-list-group-item {
     list-style: none;
@@ -98,3 +99,10 @@ input {
     padding: 10px;
     margin-left: 10px;
 }
+
+[class*="col-"] {
+    width: 100%;
+  }
+  
+
+
