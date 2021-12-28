@@ -19,12 +19,13 @@ h1 {
 h2 {
     color:bl;
     font-weight: bolder;
-    margin-left: 20px;
+    margin-left: 0px;
 }
 h3 {
     color: black;
     font-weight: bolder;
     margin-top: 15px;
+    justify-content: space-around;
 }
 .search-list-group-item {
     list-style: none;
@@ -72,8 +73,8 @@ input {
 
 .current-forecast {
     
-    margin-left: 20px;
-    margin-bottom: 20px;
+    margin-left: 5px;
+    margin-bottom: 10px;
     display: block;
     background-color: white;
     color: black;
@@ -81,8 +82,9 @@ input {
     border-style:solid;
     border-color:rgb(26, 55, 77);
     font-weight: bolder;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 5px;
+    
+    justify-content: space-around;
 }
 
 .day {
