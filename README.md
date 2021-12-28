@@ -7,8 +7,7 @@ HW6 (w.dashboard)
   > Keep smiling and work harder
   
   ## Description
-    This budget tracker app is created to allow a user to track/add their expenses and deposits to their budget with or without an internet connection. When entering transactions offline, they should populate the total when brought back online.
-  
+  This weather dashboard allows a user to search for a city and be presented with current and future conditions for that city. Conditions include the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index.
 
   ## Table of Contents
   - [Description](#)
@@ -22,9 +21,9 @@ HW6 (w.dashboard)
   * The Deployed link: https://alice-budget-tracker.herokuapp.com/ 
 
   ## Screenshots
-  ![w-dash1](https://github.com/thutuephan/DBSP-PWA-Budget-tracker/blob/main/public/images/budget1.png)
-  ![w-dash2](https://github.com/thutuephan/DBSP-PWA-Budget-tracker/blob/main/public/images/budget2.png)
-  ![w-dash3](https://github.com/thutuephan/DBSP-PWA-Budget-tracker/blob/main/public/images/budget2.png)
+  ![w-dash1](https://github.com/thutuephan/WD-TPG/blob/main/ASSETS/images/weather-dash1.png)
+  ![w-dash2](https://github.com/thutuephan/WD-TPG/blob/main/ASSETS/images/weather-dash2.png)
+  ![w-dash3](https://github.com/thutuephan/WD-TPG/blob/main/ASSETS/images/weather-dash3.png)
 
   
 
