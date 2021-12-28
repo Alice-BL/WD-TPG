@@ -25,18 +25,18 @@ function getWeather(city) {
             var oneCall = `https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&exclude={part}&appid=${weatherAPIKey}&units=imperial`
 
             fetch(oneCall)
-            .then(function(response) {
-            return response.json();
-            })
-            .then(function(oneCallData) {
-            console.log(oneCallData);
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (oneCallData) {
+                    console.log(oneCallData);
 
 
-                // Copied link from stackoverflow to get the weather icon
-                var iconurl = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
-            
-                // Dynamic html and data
-                currentForecast.innerHTML = `
+                    // Copied link from stackoverflow to get the weather icon
+                    var iconurl = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+
+                    // Dynamic html and data
+                    currentForecast.innerHTML = `
                     <div class="cityName"><h3 id="city">${data.name} </h3>
                         <div id="current-date">(${moment(data.dt, 'X').format('MM/DD/YYYY')})
                         <img id="weather-icon" src='${iconurl}'>    
@@ -49,12 +49,12 @@ function getWeather(city) {
                     <p class="current-city">UV Index: <span id="uv-index">${oneCallData.current.uvi}</span></p>
 
                     `
-                // Future conditions for the selected city, 5-day forecast; created a for loop to loop through 5 days forecast, select from index 1 -5 under daily section from one call api
-                fiveDay.innerHTML = ''
-                for (let i = 1; i < 6; i++) {
-                var iconurl = "http://openweathermap.org/img/w/" + oneCallData.daily[i].weather[0].icon + ".png";
+                    // Future conditions for the selected city, 5-day forecast; created a for loop to loop through 5 days forecast, select from index 1 -5 under daily section from one call api
+                    fiveDay.innerHTML = ''
+                    for (let i = 1; i < 6; i++) {
+                        var iconurl = "http://openweathermap.org/img/w/" + oneCallData.daily[i].weather[0].icon + ".png";
 
-                fiveDay.innerHTML = fiveDay.innerHTML + `<div class="day" id="box1">
+                        fiveDay.innerHTML = fiveDay.innerHTML + `<div class="day" id="box1">
                 <p>${moment(oneCallData.daily[i].dt, 'X').format('MM/DD/YYYY')}</p>
                 <img class="weather-img" src='${iconurl}'>
                 </br>
@@ -64,35 +64,33 @@ function getWeather(city) {
 
             
                 </div>`
-                }
-                
-                // Set UV Index data function and its color coded
-                let uvIndexColor = document.querySelector('#uv-index');
-                if (oneCallData.current.uvi <= 2) {
-                    uvIndexColor.setAttribute('class', 'badge badge-success');
-                } else if (oneCallData.current.uvi > 2 && oneCallData.current.uvi < 8) {
-                    uvIndexColor.setAttribute('class', 'badge badge-warning');
-                
-                } else {
-                    uvIndexColor.setAttribute('class', 'badge badge-dangerous')
-                }
-        });
-        
-        
+                    }
 
-    });   
+                    // Set UV Index data function and its color coded
+                    let uvIndexColor = document.querySelector('#uv-index');
+                    if (oneCallData.current.uvi <= 2) {
+                        uvIndexColor.setAttribute('class', 'badge badge-success');
+                    } else if (oneCallData.current.uvi > 2 && oneCallData.current.uvi < 8) {
+                        uvIndexColor.setAttribute('class', 'badge badge-warning');
+
+                    } else {
+                        uvIndexColor.setAttribute('class', 'badge badge-dangerous')
+                    }
+                });
+
+
+
+        });
 }
 
 function find(c) {
     for (var i = 0; i < searchCityList.length; i++) {
-        if(c.toUpperCase() === searchCityList[i]) {
+        if (c.toUpperCase() === searchCityList[i]) {
             return -1; // the first value should be sorted
         }
-    } 
+    }
     return 1;
 }
-
-
 
 searchButton.addEventListener('click', function (e) {
     getWeather(cityInput.value);
@@ -100,22 +98,21 @@ searchButton.addEventListener('click', function (e) {
 
     // Append the new city to the search list
     var city = $('#City-input').val().trim();
-     if (!searchHistoryList.includes(city)) {
-         searchHistoryList.push(city);
-         var searchedCity = $(`
+    if (!searchHistoryList.includes(city)) {
+        searchHistoryList.push(city);
+        var searchedCity = $(`
              <li class='search-list-group-item'>${city}</li>
              `);
-         $('#search-history').append(searchedCity);
-     };
-    
-     localStorage.setItem('city', JSON.stringify(searchHistoryList));
-     //console.log(searchHistoryList);
+        $('#search-history').append(searchedCity);
+    };
 
+    localStorage.setItem('city', JSON.stringify(searchHistoryList));
+    //console.log(searchHistoryList);
 
-    
 })
-
-$(document).on('click', '.search-list-group-item', function() {
+// WHEN I open the weather dashboard
+// THEN I am presented with the last searched city forecast
+$(document).on('click', '.search-list-group-item', function () {
     var listCity = $(this).text();
     getWeather(listCity);
 })
@@ -123,6 +120,15 @@ $(document).on('click', '.search-list-group-item', function() {
 // Make the function is available after the document is loaded
 // When I open the weather dashboard
 // THEN I am presented with the last searched city forecast
+$(document).ready(function() {
+    var searchCityHistoryArr = JSON.parse(localStorage.getItem('city'));
+    if (searchCityHistoryArr !== null) {
+        var lastSearchIndex = searchCityHistoryArr.length - 1;
+        var lastSearchCity = searchCityHistoryArr[lastSearchIndex];
+        getWeather(lastSearchCity);
+    }
+})
+
 
 // Write a currentWeather(data) function that returns html values based on the data that is returned in your getWeather() fetch request.
 
