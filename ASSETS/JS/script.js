@@ -130,7 +130,8 @@ $(document).ready(function () {
 
 // Clear old searched cities from localStorage
 clearButton.addEventListener('click', function (e) {
+    if (localStorage.length > 0) {
+        $('.search-list-group-item').html('');
+    }
     localStorage.clear();
-
-
 })
