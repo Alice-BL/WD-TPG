@@ -1,4 +1,4 @@
-# WD-TPG
+# MYBBHAS-Weather Dashboard
 HW6 (w.dashboard)
 
 
@@ -18,7 +18,7 @@ HW6 (w.dashboard)
 
   ## Links
   * The URL of the GitHub repository: https://github.com/thutuephan/WD-TPG
-  * The Deployed link: https://alice-budget-tracker.herokuapp.com/ 
+  * The Deployed link: https://thutuephan.github.io/WD-TPG/
 
   ## Screenshots
   ![w-dash1](https://github.com/thutuephan/WD-TPG/blob/main/ASSETS/images/weather-dash1.png)
