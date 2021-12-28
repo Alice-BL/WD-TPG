@@ -9,15 +9,21 @@ body {
     width: 100%;
     align-items: center;
     color: white;
+    margin-top: 15px;
+    padding-top: 10px;
+
 } 
+h1 {
+    font-weight: bolder;
+}
 h2 {
     color:bl;
-    font-weight: bold;
+    font-weight: bolder;
     margin-left: 20px;
 }
 h3 {
     color: black;
-    font-weight: bold;
+    font-weight: bolder;
     margin-top: 15px;
 }
 
@@ -25,7 +31,7 @@ h3 {
     background-color: rgb(214, 229, 250);
     padding-left: 15px;
 }
-#search-Btn {
+#search-Btn, #clear-history {
     border-radius: 10px;
     color: white;
     width: 100%;
@@ -50,6 +56,7 @@ input {
     margin-left: 5px;
     
 }
+
 .current-forecast {
     
     margin-left: 20px;
@@ -60,7 +67,7 @@ input {
     border-radius: 10px;
     border-style:solid;
     border-color:rgb(26, 55, 77);
-    font-weight: bold;
+    font-weight: bolder;
     padding-left: 30px;
     padding-right: 30px;
 }

@@ -4,7 +4,7 @@ var cityInput = document.querySelector('#City-input');
 var searchButton = document.querySelector('#search-Btn');
 var currentForecast = document.querySelector('.current-forecast');
 var fiveDay = document.querySelector('.FiveDay');
-
+var searchHistoryList = [];
 
 // write a function to getWeather(). I will pass in a city as an argument to getWeather(city).
 function getWeather(city) {
@@ -74,10 +74,22 @@ function getWeather(city) {
                     uvIndexColor.setAttribute('class', 'badge badge-warning');
                 
                 } else {
-                    uvIndexColor.setAttribute('class', 'badge badge-danger')
+                    uvIndexColor.setAttribute('class', 'badge badge-dangerous')
                 }
         });
+        
+        
+
     });   
+}
+
+function find(c) {
+    for (var i = 0; i < searchCityList.length; i++) {
+        if(c.toUpperCase() === searchCityList[i]) {
+            return -1; // the first value should be sorted
+        }
+    } 
+    return 1;
 }
 
 
@@ -85,23 +97,32 @@ function getWeather(city) {
 searchButton.addEventListener('click', function (e) {
     getWeather(cityInput.value);
     e.preventDefault();
-    // var city = $('#City-input').val().trim();
-    // var searchHistoryList = [];
 
-    // if (!searchHistoryList.includes(city)) {
-    //     searchHistoryList.push(city);
-    //     var searchedCity = $(`
-    //         <li id="search-history">${city}</li>
-    //         `);
-    //     $("#City-input").append(searchedCity);
-    // };
+    // Append the new city to the search list
+    var city = $('#City-input').val().trim();
+     if (!searchHistoryList.includes(city)) {
+         searchHistoryList.push(city);
+         var searchedCity = $(`
+             <li class='search-list-group-item'>${city}</li>
+             `);
+         $('#search-history').append(searchedCity);
+     };
     
-    // localStorage.setItem("city", JSON.stringify(searchHistoryList));
-    // console.log(searchHistoryList);
+     localStorage.setItem('city', JSON.stringify(searchHistoryList));
+     //console.log(searchHistoryList);
 
 
     
 })
+
+$(document).on('click', '.search-list-group-item', function() {
+    var listCity = $(this).text();
+    getWeather(listCity);
+})
+
+// Make the function is available after the document is loaded
+// When I open the weather dashboard
+// THEN I am presented with the last searched city forecast
 
 // Write a currentWeather(data) function that returns html values based on the data that is returned in your getWeather() fetch request.
 
